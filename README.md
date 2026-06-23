@@ -1,1 +1,0 @@
-# syoukoukai.presentation
