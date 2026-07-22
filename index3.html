@@ -3,103 +3,124 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI活用研修 | 中小企業のための「使えるAI」導入プログラム</title>
-<meta name="description" content="中小企業の現場で本当に使えるAI活用スキルを、導入編・基礎編・応用編の3ステップで身につける実践型研修。">
+<title>SUGOMoRIリゾート生野高原 | 1棟貸切グランピング</title>
+<meta name="description" content="兵庫・生野高原の1棟貸切グランピング施設。カップル・ファミリー・グループで、自然に囲まれたプライベートな時間を。">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{font-family:"Hiragino Kaku Gothic ProN","ヒラギノ角ゴ ProN W3","Yu Gothic",Meiryo,sans-serif;color:#1a2a3a;line-height:1.7;background:#fff}
+  :root{
+    --green:#3d5f3d;
+    --green-dark:#26401f;
+    --gold:#c9a96e;
+    --gold-dark:#a3854e;
+    --ink:#2a2a25;
+    --sub:#6b6b60;
+    --bg:#faf9f5;
+  }
+  body{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;color:var(--ink);line-height:1.8;background:#fff;-webkit-font-smoothing:antialiased}
   img{max-width:100%;display:block}
   a{color:inherit;text-decoration:none}
-  .container{max-width:1080px;margin:0 auto;padding:0 24px}
+  .container{max-width:1100px;margin:0 auto;padding:0 24px}
+  .sans{font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}
 
   /* Header */
-  header{position:sticky;top:0;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);z-index:100;border-bottom:1px solid #eef2f6}
-  .nav{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;max-width:1080px;margin:0 auto}
-  .logo{font-weight:700;font-size:18px;color:#0b3d91}
-  .logo span{color:#e8a33d}
-  .btn{display:inline-block;background:#e8a33d;color:#fff;padding:12px 24px;border-radius:8px;font-weight:700;transition:.2s;border:none;cursor:pointer}
-  .btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(232,163,61,.35)}
-  .btn.primary-lg{padding:18px 40px;font-size:17px}
-  .btn.outline{background:transparent;color:#0b3d91;border:2px solid #0b3d91}
+  header{position:fixed;top:0;left:0;right:0;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);z-index:100;border-bottom:1px solid rgba(201,169,110,.2)}
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:16px 32px;max-width:1200px;margin:0 auto}
+  .logo{font-size:18px;letter-spacing:2px;color:var(--green-dark)}
+  .logo em{color:var(--gold);font-style:normal;font-weight:700}
+  .btn{display:inline-block;background:var(--gold);color:#fff;padding:12px 28px;border-radius:2px;font-weight:600;letter-spacing:2px;transition:.3s;font-size:14px}
+  .btn:hover{background:var(--gold-dark);transform:translateY(-2px);box-shadow:0 8px 20px rgba(201,169,110,.35)}
+  .btn.lg{padding:20px 48px;font-size:15px;letter-spacing:3px}
+  .btn.outline{background:transparent;color:#fff;border:1px solid #fff}
+  .btn.outline:hover{background:#fff;color:var(--green-dark)}
 
   /* Hero */
-  .hero{background:linear-gradient(135deg,#0b3d91 0%,#1a5fbb 100%);color:#fff;padding:80px 0 100px;position:relative;overflow:hidden}
-  .hero::after{content:"";position:absolute;right:-100px;bottom:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(232,163,61,.3),transparent 70%);border-radius:50%}
-  .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;position:relative;z-index:1}
-  .hero h1{font-size:40px;line-height:1.4;margin-bottom:24px;font-weight:700}
-  .hero h1 .highlight{color:#ffd67a;border-bottom:3px solid #ffd67a}
-  .hero p.lead{font-size:18px;margin-bottom:32px;opacity:.95}
-  .hero-img{border-radius:16px;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,.25)}
+  .hero{position:relative;height:100vh;min-height:640px;background:linear-gradient(rgba(38,64,31,.35),rgba(38,64,31,.55)),url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1600&auto=format&fit=crop') center/cover;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center}
+  .hero-content{max-width:800px;padding:0 24px}
+  .hero .tag{display:inline-block;padding:6px 20px;border:1px solid var(--gold);color:var(--gold);letter-spacing:4px;font-size:12px;margin-bottom:32px;font-family:"Hiragino Kaku Gothic ProN",sans-serif}
+  .hero h1{font-size:52px;line-height:1.5;margin-bottom:24px;font-weight:400;letter-spacing:4px}
+  .hero h1 .accent{color:var(--gold)}
+  .hero p{font-size:17px;margin-bottom:48px;opacity:.95;letter-spacing:2px}
+  .hero .scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);color:#fff;font-size:11px;letter-spacing:3px;writing-mode:vertical-rl;font-family:"Hiragino Kaku Gothic ProN",sans-serif}
+  .hero .scroll::after{content:"";display:block;width:1px;height:40px;background:var(--gold);margin:12px auto 0;animation:scrollLine 2s infinite}
+  @keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
   /* Section common */
-  section{padding:80px 0}
-  .section-title{text-align:center;font-size:32px;margin-bottom:16px;color:#0b3d91}
-  .section-title::after{content:"";display:block;width:60px;height:4px;background:#e8a33d;margin:16px auto 0;border-radius:2px}
-  .section-lead{text-align:center;color:#556677;margin-bottom:56px;font-size:16px}
+  section{padding:120px 0}
+  .section-tag{text-align:center;color:var(--gold);letter-spacing:6px;font-size:12px;margin-bottom:16px;font-family:"Hiragino Kaku Gothic ProN",sans-serif;font-weight:600}
+  .section-title{text-align:center;font-size:34px;letter-spacing:6px;margin-bottom:24px;color:var(--green-dark);font-weight:400}
+  .section-lead{text-align:center;color:var(--sub);margin-bottom:72px;font-size:15px;letter-spacing:2px}
+  .divider{width:40px;height:1px;background:var(--gold);margin:0 auto 72px}
 
-  /* Problems */
-  .problems{background:#f6f8fb}
-  .problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .problem-card{background:#fff;padding:32px 24px;border-radius:12px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-  .problem-card .icon{font-size:44px;margin-bottom:16px;display:block}
-  .problem-card h3{font-size:18px;margin-bottom:12px;color:#0b3d91}
-  .problem-card p{font-size:15px;color:#556677}
+  /* Concept */
+  .concept{background:var(--bg)}
+  .concept-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+  .concept-text h3{font-size:26px;letter-spacing:4px;line-height:1.8;color:var(--green-dark);margin-bottom:32px;font-weight:400}
+  .concept-text p{color:var(--sub);letter-spacing:1px;margin-bottom:20px}
+  .concept-img{border-radius:2px;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,.12);aspect-ratio:4/5}
+  .concept-img img{width:100%;height:100%;object-fit:cover}
 
-  /* Points */
-  .point-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:32px}
-  .point-card{border:2px solid #eef2f6;border-radius:16px;padding:32px 28px;transition:.3s;position:relative}
-  .point-card:hover{border-color:#e8a33d;transform:translateY(-4px)}
-  .point-num{position:absolute;top:-18px;left:24px;background:#e8a33d;color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;box-shadow:0 4px 12px rgba(232,163,61,.4)}
-  .point-card h3{font-size:20px;margin:12px 0 16px;color:#0b3d91}
-  .point-card p{font-size:15px;color:#455566}
+  /* Features */
+  .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+  .feature{text-align:center}
+  .feature .num{font-family:"Hiragino Mincho ProN",serif;font-size:56px;color:var(--gold);font-style:italic;line-height:1;margin-bottom:16px}
+  .feature .img{aspect-ratio:1;border-radius:2px;overflow:hidden;margin-bottom:24px}
+  .feature .img img{width:100%;height:100%;object-fit:cover;transition:.6s}
+  .feature:hover .img img{transform:scale(1.05)}
+  .feature h3{font-size:20px;letter-spacing:3px;margin-bottom:16px;color:var(--green-dark);font-weight:400}
+  .feature p{color:var(--sub);font-size:14px;letter-spacing:1px}
 
-  /* Curriculum */
-  .curriculum{background:#f6f8fb}
-  .curriculum-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .course-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.06);display:flex;flex-direction:column}
-  .course-head{padding:24px;color:#fff;text-align:center}
-  .course-head.intro{background:linear-gradient(135deg,#4fb3d9,#2d8ab5)}
-  .course-head.basic{background:linear-gradient(135deg,#5ab97a,#2f8a53)}
-  .course-head.advanced{background:linear-gradient(135deg,#e8a33d,#c8801a)}
-  .course-head .label{font-size:13px;opacity:.9;letter-spacing:2px}
-  .course-head h3{font-size:24px;margin-top:8px}
-  .course-body{padding:24px;flex:1}
-  .course-body ul{list-style:none;padding:0}
-  .course-body li{padding:8px 0 8px 24px;position:relative;font-size:15px;color:#455566}
-  .course-body li::before{content:"✓";position:absolute;left:0;color:#5ab97a;font-weight:700}
-  .course-meta{padding:16px 24px;background:#f6f8fb;font-size:13px;color:#556677;text-align:center;border-top:1px solid #eef2f6}
+  /* Gallery */
+  .gallery{background:var(--bg)}
+  .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .gallery-grid .item{aspect-ratio:1;overflow:hidden;border-radius:2px}
+  .gallery-grid .item.wide{grid-column:span 2;aspect-ratio:2/1}
+  .gallery-grid img{width:100%;height:100%;object-fit:cover;transition:.6s}
+  .gallery-grid .item:hover img{transform:scale(1.08)}
 
-  /* Voice */
-  .voice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-  .voice-card{background:#fff8ee;padding:28px;border-radius:12px;border-left:4px solid #e8a33d}
-  .voice-card .who{font-weight:700;color:#0b3d91;margin-bottom:12px;font-size:14px}
-  .voice-card p{color:#455566}
+  /* Target */
+  .target{background:linear-gradient(135deg,#f7f4ec,#faf9f5)}
+  .target-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+  .target-card{background:#fff;padding:48px 32px;text-align:center;border:1px solid rgba(201,169,110,.3);position:relative}
+  .target-card::before{content:"";position:absolute;top:12px;left:12px;right:12px;bottom:12px;border:1px solid rgba(201,169,110,.15);pointer-events:none}
+  .target-card .icon{font-size:40px;margin-bottom:20px}
+  .target-card h3{font-size:18px;letter-spacing:4px;color:var(--green-dark);margin-bottom:16px;font-weight:400}
+  .target-card p{color:var(--sub);font-size:14px;letter-spacing:1px}
 
   /* CTA */
-  .cta{background:linear-gradient(135deg,#0b3d91 0%,#1a5fbb 100%);color:#fff;text-align:center}
-  .cta h2{font-size:32px;margin-bottom:16px}
-  .cta p{margin-bottom:32px;font-size:17px;opacity:.95}
-  .cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-  .cta .btn{background:#e8a33d}
-  .cta .btn.outline{background:transparent;border:2px solid #fff;color:#fff}
+  .cta{background:linear-gradient(rgba(38,64,31,.75),rgba(38,64,31,.85)),url('https://images.unsplash.com/photo-1533587851505-d119e13fa0d7?w=1600&auto=format&fit=crop') center/cover;color:#fff;text-align:center;padding:120px 24px}
+  .cta h2{font-size:34px;letter-spacing:6px;margin-bottom:24px;font-weight:400}
+  .cta p{margin-bottom:48px;font-size:16px;opacity:.95;letter-spacing:2px}
+  .cta-buttons{display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
+
+  /* Info */
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+  .info-table{width:100%;border-collapse:collapse}
+  .info-table th,.info-table td{padding:20px 8px;text-align:left;border-bottom:1px solid rgba(201,169,110,.3);font-size:14px;letter-spacing:1px}
+  .info-table th{color:var(--gold);width:130px;font-weight:600;font-family:"Hiragino Kaku Gothic ProN",sans-serif}
+  .info-table td{color:var(--sub)}
+  .map-placeholder{aspect-ratio:4/3;background:linear-gradient(135deg,var(--green),var(--green-dark));display:flex;align-items:center;justify-content:center;color:#fff;letter-spacing:4px;font-size:14px}
 
   /* Footer */
-  footer{background:#0a1f3d;color:#8fa2bd;padding:32px 0;text-align:center;font-size:13px}
-  footer .logo{color:#fff;margin-bottom:8px}
+  footer{background:var(--green-dark);color:#a5b5a0;padding:56px 24px 32px;text-align:center;font-size:13px;letter-spacing:2px;font-family:"Hiragino Kaku Gothic ProN",sans-serif}
+  footer .logo{color:#fff;margin-bottom:12px;font-family:"Hiragino Mincho ProN",serif}
+  footer .copy{margin-top:24px;font-size:11px;opacity:.6}
 
   /* Responsive */
   @media(max-width:768px){
-    .hero{padding:56px 0 72px}
-    .hero-grid{grid-template-columns:1fr;gap:32px}
-    .hero h1{font-size:28px}
-    section{padding:56px 0}
-    .section-title{font-size:24px}
-    .problem-grid,.point-grid,.curriculum-grid,.voice-grid{grid-template-columns:1fr;gap:20px}
+    .hero{height:auto;min-height:520px;padding:120px 0 80px}
+    .hero h1{font-size:28px;letter-spacing:2px}
+    .hero p{font-size:14px}
+    section{padding:72px 0}
+    .section-title{font-size:22px;letter-spacing:3px}
+    .concept-grid,.info-grid{grid-template-columns:1fr;gap:40px}
+    .feature-grid,.target-grid{grid-template-columns:1fr;gap:32px}
+    .gallery-grid{grid-template-columns:repeat(2,1fr)}
+    .gallery-grid .item.wide{grid-column:span 2}
     .nav{padding:12px 16px}
-    .logo{font-size:16px}
-    .btn{padding:10px 16px;font-size:14px}
-    .cta h2{font-size:24px}
+    .btn.lg{padding:16px 32px;font-size:13px}
+    .cta h2{font-size:22px;letter-spacing:3px}
+    .hero .scroll{display:none}
   }
 </style>
 </head>
@@ -107,159 +128,142 @@
 
 <header>
   <div class="nav">
-    <div class="logo">AI活用研修<span>.jp</span></div>
-    <a href="#cta" class="btn">お問い合わせ</a>
+    <div class="logo">SUGOMoRI <em>RESORT</em> 生野高原</div>
+    <a href="#cta" class="btn">RESERVATION</a>
   </div>
 </header>
 
 <section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <h1>「うちの会社でも <span class="highlight">AI、使えるかも</span>」<br>その一歩を、確実に。</h1>
-      <p class="lead">中小企業の現場で本当に使える AI 活用スキルを、<br>導入編・基礎編・応用編の3ステップで身につける実践型研修。</p>
-      <a href="#cta" class="btn primary-lg">無料で資料を受け取る →</a>
-    </div>
-    <div class="hero-img">
-      <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&auto=format&fit=crop" alt="AI研修を受ける社員のイメージ" loading="lazy">
-    </div>
+  <div class="hero-content">
+    <span class="tag">GLAMPING RESORT</span>
+    <h1>森に、<span class="accent">籠もる</span>。<br>贅を、味わう。</h1>
+    <p>兵庫・生野高原、1棟貸切のプライベートグランピング</p>
+    <a href="#cta" class="btn lg">空室を確認する</a>
   </div>
+  <div class="scroll">SCROLL</div>
 </section>
 
-<section class="problems">
+<section class="concept">
   <div class="container">
-    <h2 class="section-title">こんなお悩み、ありませんか？</h2>
-    <p class="section-lead">中小企業の経営者・担当者から、実際にいただく声です。</p>
-    <div class="problem-grid">
-      <div class="problem-card">
-        <span class="icon">🤔</span>
-        <h3>何から始めればいい？</h3>
-        <p>AIが便利らしいのは分かるが、自社のどの業務に使えるかイメージが湧かない。</p>
+    <div class="section-tag">CONCEPT</div>
+    <h2 class="section-title">私たちだけの、森時間</h2>
+    <div class="divider"></div>
+    <div class="concept-grid">
+      <div class="concept-img">
+        <img src="https://images.unsplash.com/photo-1487730116645-74489c95b41b?w=800&auto=format&fit=crop" alt="森の中のグランピングテント">
       </div>
-      <div class="problem-card">
-        <span class="icon">📚</span>
-        <h3>本を読んでも続かない</h3>
-        <p>一人で学ぶと結局使わなくなる。社内に定着させる仕組みが欲しい。</p>
-      </div>
-      <div class="problem-card">
-        <span class="icon">💸</span>
-        <h3>研修コストが不安</h3>
-        <p>まとまった予算は出しにくい。国の制度で費用を抑えられないか。</p>
+      <div class="concept-text">
+        <h3>誰にも邪魔されない、<br>贅沢な非日常を。</h3>
+        <p>SUGOMoRIリゾート生野高原は、豊かな自然の中に佇む1棟貸切のグランピング施設です。</p>
+        <p>他のお客様と顔を合わせることなく、大切な人だけの静かな時間を心ゆくまで。焚き火の音、風の音、鳥の声——都会では味わえない"何もない贅沢"が、ここにあります。</p>
+        <p>手ぶらでご来場いただけるフルセットアップ。到着したその瞬間から、あなたはもう森の主人公です。</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="points">
+<section id="features">
   <div class="container">
-    <h2 class="section-title">選ばれる3つの理由</h2>
-    <p class="section-lead">「知る」で終わらせず、「明日から使える」まで持っていきます。</p>
-    <div class="point-grid">
-      <div class="point-card">
-        <div class="point-num">1</div>
-        <h3>段階式カリキュラム</h3>
-        <p>導入編で慣れ、基礎編で型を覚え、応用編で自社業務へ落とし込む。無理のない3ステップ設計。</p>
+    <div class="section-tag">FEATURES</div>
+    <h2 class="section-title">3つのこだわり</h2>
+    <div class="divider"></div>
+    <div class="feature-grid">
+      <div class="feature">
+        <div class="num">01</div>
+        <div class="img"><img src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=600&auto=format&fit=crop" alt="1棟貸切"></div>
+        <h3>1棟貸切</h3>
+        <p>他のグループと交わらない完全プライベート。カップルもファミリーも、思うがままに寛げます。</p>
       </div>
-      <div class="point-card">
-        <div class="point-num">2</div>
-        <h3>現場の仮想事例で学ぶ</h3>
-        <p>営業・事務・企画など、身近な仕事を題材にしたワーク中心。汎用スキルとして定着します。</p>
+      <div class="feature">
+        <div class="num">02</div>
+        <div class="img"><img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&auto=format&fit=crop" alt="本格グランピング"></div>
+        <h3>本格グランピング</h3>
+        <p>自然に囲まれながらも、快適な設備と上質なしつらえ。焚き火・BBQ・満天の星まで揃います。</p>
       </div>
-      <div class="point-card">
-        <div class="point-num">3</div>
-        <h3>助成金の活用に対応</h3>
-        <p>要件を満たしたカリキュラム設計。提携社労士が申請までサポートします（別途契約）。</p>
+      <div class="feature">
+        <div class="num">03</div>
+        <div class="img"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&auto=format&fit=crop" alt="手ぶらで気軽"></div>
+        <h3>手ぶらで気軽に</h3>
+        <p>食材・器材・寝具まで全てご用意。アウトドア初心者も、着替えだけでお越しいただけます。</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="curriculum">
+<section class="gallery">
   <div class="container">
-    <h2 class="section-title">3つのカリキュラム</h2>
-    <p class="section-lead">レベルに応じて選べる／組み合わせて受講できる構成。</p>
-    <div class="curriculum-grid">
-      <div class="course-card">
-        <div class="course-head intro">
-          <div class="label">STEP 1</div>
-          <h3>導入編</h3>
-        </div>
-        <div class="course-body">
-          <ul>
-            <li>AIとの向き合い方・基本操作</li>
-            <li>安全に使うためのルール</li>
-            <li>環境設定と初期セットアップ</li>
-            <li>身近な業務での小さな成功体験</li>
-          </ul>
-        </div>
-        <div class="course-meta">12時間 / 同時双方向型</div>
-      </div>
-      <div class="course-card">
-        <div class="course-head basic">
-          <div class="label">STEP 2</div>
-          <h3>基礎編</h3>
-        </div>
-        <div class="course-body">
-          <ul>
-            <li>指示の出し方（プロンプトの型）</li>
-            <li>文章作成・要約・翻訳の実践</li>
-            <li>企画・アイデア出しへの活用</li>
-            <li>チームでの共有と改善</li>
-          </ul>
-        </div>
-        <div class="course-meta">12時間 / 同時双方向型</div>
-      </div>
-      <div class="course-card">
-        <div class="course-head advanced">
-          <div class="label">STEP 3</div>
-          <h3>応用編</h3>
-        </div>
-        <div class="course-body">
-          <ul>
-            <li>データ分析・レポート作成</li>
-            <li>業務フローへの組み込み</li>
-            <li>社内ガイドラインの整備</li>
-            <li>継続活用の仕組みづくり</li>
-          </ul>
-        </div>
-        <div class="course-meta">12時間 / 同時双方向型</div>
-      </div>
+    <div class="section-tag">GALLERY</div>
+    <h2 class="section-title">滞在のひととき</h2>
+    <div class="divider"></div>
+    <div class="gallery-grid">
+      <div class="item wide"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&auto=format&fit=crop" alt="森の風景"></div>
+      <div class="item"><img src="https://images.unsplash.com/photo-1533560777802-b0a1d4c74c22?w=600&auto=format&fit=crop" alt="焚き火"></div>
+      <div class="item"><img src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=600&auto=format&fit=crop" alt="テント外観"></div>
+      <div class="item"><img src="https://images.unsplash.com/photo-1533587851505-d119e13fa0d7?w=600&auto=format&fit=crop" alt="BBQ"></div>
+      <div class="item"><img src="https://images.unsplash.com/photo-1487730116645-74489c95b41b?w=600&auto=format&fit=crop" alt="テント内観"></div>
+      <div class="item wide"><img src="https://images.unsplash.com/photo-1445308394109-4ec2920981b1?w=1200&auto=format&fit=crop" alt="星空"></div>
     </div>
   </div>
 </section>
 
-<section>
+<section class="target">
   <div class="container">
-    <h2 class="section-title">受講いただいた声</h2>
-    <p class="section-lead">「難しそう」から「明日から使える」へ。</p>
-    <div class="voice-grid">
-      <div class="voice-card">
-        <div class="who">建設業／総務担当 40代</div>
-        <p>「一人でネットで調べていた時と違い、順序立てて教えてもらえたので迷いなく実務に取り入れられました。見積書のたたき台作りに毎日使っています。」</p>
+    <div class="section-tag">FOR YOU</div>
+    <h2 class="section-title">こんな方におすすめ</h2>
+    <div class="divider"></div>
+    <div class="target-grid">
+      <div class="target-card">
+        <div class="icon">💑</div>
+        <h3>カップル</h3>
+        <p>記念日や誕生日に。二人だけの静かな夜と、焚き火を囲む語らいを。</p>
       </div>
-      <div class="voice-card">
-        <div class="who">小売業／店長 30代</div>
-        <p>「販促文やSNS投稿を作る時間が半分以下になりました。仮想事例のワークが現場に近くて、翌日から真似できたのが大きいです。」</p>
+      <div class="target-card">
+        <div class="icon">👨‍👩‍👧</div>
+        <h3>ファミリー</h3>
+        <p>お子様連れでも安心の設備。自然の中で家族の思い出づくりを。</p>
+      </div>
+      <div class="target-card">
+        <div class="icon">👥</div>
+        <h3>グループ</h3>
+        <p>気の合う仲間と、周りを気にせず盛り上がれる貸切空間。</p>
       </div>
     </div>
   </div>
 </section>
 
 <section class="cta" id="cta">
+  <h2>森の一夜を、あなたに。</h2>
+  <p>空室状況・料金プランはこちらから</p>
+  <div class="cta-buttons">
+    <a href="#" class="btn lg">空室を確認する</a>
+    <a href="tel:0000000000" class="btn lg outline">電話で問い合わせ</a>
+  </div>
+</section>
+
+<section id="info">
   <div class="container">
-    <h2>まずは無料で、詳しい資料をお送りします</h2>
-    <p>カリキュラム内容・費用・助成金の活用例まで、まとめてご案内します。</p>
-    <div class="cta-buttons">
-      <a href="mailto:info@example.com" class="btn primary-lg">資料を請求する</a>
-      <a href="tel:0000000000" class="btn primary-lg outline">電話で相談する</a>
+    <div class="section-tag">INFORMATION</div>
+    <h2 class="section-title">施設情報</h2>
+    <div class="divider"></div>
+    <div class="info-grid">
+      <table class="info-table">
+        <tr><th>施設名</th><td>SUGOMoRIリゾート生野高原</td></tr>
+        <tr><th>所在地</th><td>兵庫県朝来市生野町</td></tr>
+        <tr><th>チェックイン</th><td>15:00 〜 18:00</td></tr>
+        <tr><th>チェックアウト</th><td>〜 10:00</td></tr>
+        <tr><th>定員</th><td>1棟あたり最大6名</td></tr>
+        <tr><th>設備</th><td>テント／BBQ場／焚き火／シャワー／トイレ</td></tr>
+        <tr><th>アクセス</th><td>播但連絡道路 生野ICより車で約15分</td></tr>
+      </table>
+      <div class="map-placeholder">MAP</div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="container">
-    <div class="logo">AI活用研修.jp</div>
-    <div>© 2026 AI活用研修事業</div>
-  </div>
+  <div class="logo">SUGOMoRI RESORT 生野高原</div>
+  <div>兵庫県朝来市生野町 | TEL: 000-0000-0000</div>
+  <div class="copy">© 2026 SUGOMoRI RESORT All Rights Reserved.</div>
 </footer>
 
 </body>
